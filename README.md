@@ -7,7 +7,7 @@ A form builder component for creating easy forms in React with just a config. Th
 
 ## Features
 - Render a form with just a config of all the fields needed in the form, with their `label` and `initialValue`.
-- Ability to add custom header and footer *(including the Submit button, don't forget it!)* for the form. 
+- Ability to add custom header and footer elements *(including the Submit button, don't forget it!)* for the form. 
 - Ability to handle form submission, by passing an `onSubmit` callback prop. The callback receives the form state *(an object of form labels as keys and the input value as values)* as an argument.
 - High customizability:
   - Custom **form, form container, inputs & labels**.
@@ -16,6 +16,7 @@ A form builder component for creating easy forms in React with just a config. Th
   - **Customize all forms on your app globally** using global classnames, or
   - **Customize each form differently** using props for individual forms.
 - Error handling on input level for inputs which are `required` to be filled.
+- Fully keyboard accessible
 
 ## How to use
 
@@ -49,13 +50,13 @@ const LoginForm = () => {
   const loginFormConfig: FormInputConfig[] = [
     {
       label: "Username",
-      value: "",
+      initialValue: "",
       type: "text",
       required: true,
     },
     {
       label: "Password",
-      value: "",
+      initialValue: "",
       type: "password",
       required: true,
     }
@@ -89,7 +90,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(<LoginForm/>);
 ```
 Please cheeck the `src/examples` folder for more example forms. 
 
-**For seeing the example forms in use, please check the [website](https://re-form.vercel.app/examples).**
+**For seeing the example forms in UI, please check the [website](https://re-form.vercel.app/examples).**
 
 ## Props 
 
