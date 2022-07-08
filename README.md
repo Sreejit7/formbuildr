@@ -105,7 +105,7 @@ Please cheeck the `src/examples` folder for more example forms.
 ## Props
 
 ### FormBuilder props
-*Required props are marked with an asterisk(*)*
+_Required props are marked with an asterisk(*)_
 
 |      Prop       |     Type      | Description                                                                                                  |
 | :-------------: | :-----------: | ------------------------------------------------------------------------------------------------------------ |
@@ -133,7 +133,7 @@ Please cheeck the `src/examples` folder for more example forms.
 
 Each form input config object contains the following:
 
-_Required properties are marked with an asterisk(_)\*
+_Required properties are marked with an asterisk(*)_
 
 |   Property   |                    Type(s)                    | Description                                                                                                                                                                                                            |
 | :----------: | :-------------------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
