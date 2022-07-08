@@ -37,16 +37,16 @@ const FormBuilder = ({
     const initialFormState: FormState = {};
 
     // save the initial form state based on config
-    for (const { label, value, type } of config) {
+    for (const { label, initialValue, type } of config) {
       initialFormState[label] = {
         value:
-          // special case for dropdown, specify a '- None -' value if no value present
+          // special case for dropdown, specify a '- None -' initialValue if no initialValue present
           type === "dropdown"
-            ? !value && typeof value !== ("number" || "boolean")
+            ? !initialValue && typeof initialValue !== ("number" || "boolean")
               ? "- None -"
-              : value
-            : typeof value !== "undefined"
-            ? value
+              : initialValue
+            : typeof initialValue !== "undefined"
+            ? initialValue
             : "",
         touched: false,
         error: false,
@@ -184,7 +184,7 @@ const FormBuilder = ({
       className,
       label = "",
       size = "medium",
-      value,
+      initialValue,
       onChange,
       required = false,
       options = [],
@@ -195,7 +195,7 @@ const FormBuilder = ({
     switch (type) {
       case "radio":
         if (options.length === 0) {
-          throw new Error("please provide options for a radio input");
+          throw new Error("please provide options for a radio input!");
         }
         return options.map((option) => (
           <React.Fragment key={option}>
@@ -209,13 +209,11 @@ const FormBuilder = ({
                 type="radio"
                 value={option}
                 name={`${label}`}
-                // checked={option === value}
                 checked={
                   formState[label]?.value === "undefined"
-                    ? option === value
+                    ? option === initialValue
                     : option === formState[label]?.value
                 }
-                // onChange={(e) => onChange(getValue(e, type))}
                 onChange={(e) =>
                   handleFormChange(label, e, type, required, onChange)
                 }
@@ -226,6 +224,9 @@ const FormBuilder = ({
           </React.Fragment>
         ));
       case "dropdown":
+        if (options.length === 0) {
+          throw new Error("please provide options for a dropdown!");
+        }
         return (
           <>
             <select
@@ -235,9 +236,9 @@ const FormBuilder = ({
               style={styles}
               id={`${formId}-${label}`}
               value={
-                typeof value !== "boolean"
+                typeof initialValue !== "boolean"
                   ? typeof formState[label]?.value === "undefined"
-                    ? value
+                    ? initialValue
                     : formState[label]?.value?.toString()
                   : undefined
               }
@@ -260,11 +261,23 @@ const FormBuilder = ({
               }
             >
               {/* Default dropdown option */}
-              <option key="- None -" value="- None -">
+              <option
+                key="- None -"
+                value="- None -"
+                className={`form-input form-input-dropdown ${size} ${
+                  className ? className : ""
+                } `}
+              >
                 - None -
               </option>
               {options.map((item) => (
-                <option key={item} value={item}>
+                <option
+                  key={item}
+                  value={item}
+                  className={`form-input form-input-dropdown ${size} ${
+                    className ? className : ""
+                  } `}
+                >
                   {item}
                 </option>
               ))}
@@ -277,23 +290,14 @@ const FormBuilder = ({
             className={`form-input ${size} ${className ? className : ""} `}
             style={styles}
             id={`${formId}-${label}`}
-            // value={typeof value !== "boolean" ? value : undefined}
             value={
-              typeof value !== "boolean"
+              typeof initialValue !== "boolean"
                 ? typeof formState[label]?.value === "undefined"
-                  ? value
+                  ? initialValue
                   : formState[label]?.value?.toString()
                 : undefined
             }
             placeholder={placeholder}
-            // onChange={(e) =>
-            //   onChange(
-            //     getValue(
-            //       e as unknown as React.ChangeEvent<HTMLInputElement>,
-            //       type
-            //     )
-            //   )
-            // }
             onChange={(e) =>
               handleFormChange(
                 label,
@@ -324,7 +328,6 @@ const FormBuilder = ({
             style={styles}
             id={`${formId}-${label}`}
             type="file"
-            // onChange={(e) => onChange(getValue(e, type))}
             onChange={(e) =>
               handleFormChange(label, e, type, required, onChange)
             }
@@ -339,23 +342,21 @@ const FormBuilder = ({
             style={styles}
             id={`${formId}-${label}`}
             type={type}
-            // value={typeof value !== "boolean" ? value : undefined}
             value={
-              typeof value !== "boolean"
+              typeof initialValue !== "boolean"
                 ? typeof formState[label]?.value === "undefined"
-                  ? value
+                  ? initialValue
                   : formState[label]?.value?.toString()
                 : undefined
             }
             checked={
-              typeof value === "boolean" &&
+              typeof initialValue === "boolean" &&
               typeof formState[label]?.value === "undefined"
-                ? value
+                ? initialValue
                 : typeof formState[label]?.value === "boolean" &&
                   !!formState[label]?.value
             }
             placeholder={placeholder}
-            // onChange={(e) => onChange(getValue(e, type))}
             onChange={(e) =>
               handleFormChange(label, e, type, required, onChange)
             }

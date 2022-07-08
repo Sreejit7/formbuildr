@@ -1,7 +1,7 @@
 export interface FormInputConfig {
   label: string;
   labelClass?: string;
-  value?: FormInputValue;
+  initialValue?: FormInputValue;
   checked?: boolean;
   onChange?: ((value: FormInputValue) => void) | any;
   className?: string;
