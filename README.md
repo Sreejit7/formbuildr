@@ -17,6 +17,7 @@ A form builder component for creating easy forms in React with just a config. Th
   - **Customize each form differently** using props for individual forms.
 - Error handling on input level for inputs which are `required` to be filled.
 - Fully keyboard accessible
+- A built in `SubmitButton` component for providing a custom form submit button easily.
 
 ## How to use
 
@@ -94,6 +95,7 @@ Please cheeck the `src/examples` folder for more example forms.
 
 ## Props 
 
+### FormBuilder props
 *Required props are marked with an asterisk(*)*
 
 |       Prop      |     Type    | Description                                                                                                  |
@@ -106,6 +108,15 @@ Please cheeck the `src/examples` folder for more example forms.
 |  containerClass | `string`      | A string that includes class(es) to be attached with<br>the form container.                                  |
 | containerStyles | `Object`      | A style object that includes styles for the <br>form container.                                             |
 |     children    | `ReactNode`   | React Elements (like a Submit button) that gets rendered <br>beneath the form body (all the form fields).    |
+
+### SubmitButton props
+
+|     Prop    |            Type(s)            | Description                                                                       |
+|:-----------:|:-----------------------------:|-----------------------------------------------------------------------------------|
+| text        | `string`                      | The button text <br>[By default, it'll show a 'Submit' text]                      |
+| position    | `left`<br>`middle`<br>`right` | The alignment for the submit button.<br>[By default, it'll show up in the middle] |
+| submitClass | `string`                      | A string that includes class(es) <br>to be attached with the submit button.       |
+
 
 ## Types
 
