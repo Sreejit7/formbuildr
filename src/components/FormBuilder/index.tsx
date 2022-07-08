@@ -32,6 +32,7 @@ const FormBuilder = ({
 
   const [formState, setFormState] = useState<FormState>({});
   const [formResetState, setFormResetState] = useState<FormState>({});
+  const [formError, setformError] = useState(false);
 
   useEffect(() => {
     const initialFormState: FormState = {};
@@ -147,27 +148,77 @@ const FormBuilder = ({
         }
       }
     }
+
+    // reset form level error
+    if (formError) {
+      startTransition(() => {
+        const errorExists = Object.values(formState).some(
+          (label) => label?.error
+        );
+        setformError(errorExists);
+      });
+    }
   };
 
   /**
-   * @description submits the form, calls the onSubmit callback prop with the form state
+   * @description validates and submits the form, calls the onSubmit callback prop with the form state
    * @param e the form event
    */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (typeof onSubmit === "function") {
-      const formSubmitState: FormSubmitState = {};
+    const formSubmitState: FormSubmitState = {};
 
-      for (const label in formState) {
-        formSubmitState[label] = formState[label].value;
+    // validate the form & create form submission state
+    for (const { label, required = false, initialValue, type } of config) {
+      if (required) {
+        const { touched, error, value } = formState[label];
+
+        if (touched && error) {
+          // prevent submission in case of an error
+          setformError(true);
+          return;
+        } else if (
+          !touched &&
+          typeof initialValue !== ("number" || "boolean") &&
+          !initialValue &&
+          // special check for dropdown, if value is `- None -`, mark an error state
+          (!value || (type === "dropdown" && value === "- None -"))
+        ) {
+          /*
+           * show an error in case user didn't touch the input
+           * & no valid value is present for the input
+           **/
+          startTransition(() => {
+            setFormState((prevFormState) => ({
+              ...prevFormState,
+              [label]: {
+                ...prevFormState[label],
+                error: true,
+              },
+            }));
+
+            setformError(true);
+          });
+
+          return;
+        } else {
+          // form is valid
+          setformError(false);
+        }
       }
 
+      // create the form submission state
+      formSubmitState[label] = formState[label]?.value;
+    }
+
+    if (typeof onSubmit === "function") {
       onSubmit(formSubmitState);
 
       // reset the form
       startTransition(() => {
         setFormState(formResetState);
+        setformError(false);
       });
     }
   };
@@ -422,6 +473,11 @@ const FormBuilder = ({
             )}
           </section>
         ))}
+        {formError && (
+          <small className="form-group-error">
+            Please fill all required fields!
+          </small>
+        )}
         {children}
       </form>
     </section>

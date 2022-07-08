@@ -67,6 +67,7 @@ const ApplicationForm = () => {
       className: "application-form-input",
       labelClass: "application-form-label",
       size: "large",
+      required: true,
     },
     {
       label: "LinkedIn",
