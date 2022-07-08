@@ -40,6 +40,10 @@ a {
   display: flex;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .align-center {
   align-items: center;
 }
@@ -47,6 +51,12 @@ a {
 .justify-space-between {
   justify-content: space-between;
 }
+
+.text-underline {
+  text-decoration: underline;
+}
+
+/* classnames for application form example */
 
 .application-form {
   border: 2px solid #624d80;
