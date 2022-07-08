@@ -20,6 +20,11 @@ li {
   list-style-type: none;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .page {
   min-height: 90vh;
   padding: 1rem 1.25rem;
@@ -35,6 +40,10 @@ li {
   display: flex;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .align-center {
   align-items: center;
 }
@@ -42,6 +51,12 @@ li {
 .justify-space-between {
   justify-content: space-between;
 }
+
+.text-underline {
+  text-decoration: underline;
+}
+
+/* classnames for application form example */
 
 .application-form {
   border: 2px solid #624d80;

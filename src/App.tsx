@@ -19,7 +19,15 @@ function App() {
           >
             See Examples
           </button>
-          <button className="landing-btn secondary-btn">Read docs</button>
+          <button className="landing-btn secondary-btn">
+            <a
+              href="https://github.com/Sreejit7/react-form-builder"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read docs
+            </a>
+          </button>
         </section>
         <img src={Hero} className="landing-image" />
       </section>

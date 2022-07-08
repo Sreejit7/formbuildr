@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import FormBuilder from "../../components/FormBuilder";
 import SubmitButton from "../../components/FormBuilder/SubmitButton";
 import {
@@ -7,27 +6,27 @@ import {
 } from "../../components/FormBuilder/models/formModels";
 
 const SignUpForm = () => {
-  const loginFormConfig: FormInputConfig[] = [
+  const signupFormConfig: FormInputConfig[] = [
     {
       label: "Username",
-      value: "",
+      initialValue: "",
       type: "text",
       required: true,
     },
     {
       label: "Password",
-      value: "",
+      initialValue: "",
       type: "password",
       required: true,
     },
     {
       label: "Bio",
-      value: "",
+      initialValue: "",
       type: "textarea",
     },
     {
       label: "Gender",
-      value: "",
+      initialValue: "",
       type: "radio",
       options: ["Male", "Female", "Do not specify"],
     },
@@ -37,19 +36,19 @@ const SignUpForm = () => {
     },
     {
       label: "Remember Me",
-      value: false,
+      initialValue: false,
       type: "checkbox",
     },
   ];
 
-  const handleLoginFormSubmit = (form: FormSubmitState) => {
+  const handleSignupFormSubmit = (form: FormSubmitState) => {
     console.log(form);
   };
 
   return (
     <main className="page center">
       <FormBuilder
-        config={loginFormConfig}
+        config={signupFormConfig}
         formStyles={{
           backgroundColor: "#4cd8d3",
           boxShadow: "none",
@@ -60,15 +59,13 @@ const SignUpForm = () => {
           <header
             style={{
               width: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
             }}
+            className="center"
           >
             <h1>Sign Up</h1>
           </header>
         }
-        onSubmit={handleLoginFormSubmit}
+        onSubmit={handleSignupFormSubmit}
       >
         <SubmitButton text="Sign Up" />
       </FormBuilder>

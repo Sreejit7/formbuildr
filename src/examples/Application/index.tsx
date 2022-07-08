@@ -10,7 +10,7 @@ const ApplicationForm = () => {
     {
       label: "Name",
       type: "text",
-      value: "",
+      initialValue: "",
       required: true,
       size: "large",
       className: "application-form-input",
@@ -19,7 +19,7 @@ const ApplicationForm = () => {
     {
       label: "Email",
       type: "email",
-      value: "",
+      initialValue: "",
       required: true,
       size: "large",
       className: "application-form-input",
@@ -28,7 +28,7 @@ const ApplicationForm = () => {
     {
       label: "Mobile",
       type: "tel",
-      value: "",
+      initialValue: "",
       required: true,
       size: "large",
       className: "application-form-input",
@@ -36,9 +36,8 @@ const ApplicationForm = () => {
     },
     {
       label: "Total Work Experience (years)",
-      type: "dropdown",
-      value: "Fresher",
-      options: ["Fresher", "0-1 Years", "1-3 Years", "3-5 Years", "5 Years +"],
+      type: "number",
+      initialValue: 0,
       required: true,
       size: "large",
       className: "application-form-input",
@@ -47,7 +46,7 @@ const ApplicationForm = () => {
     {
       label: "Current Employer",
       type: "text",
-      value: "",
+      initialValue: "",
       required: true,
       size: "large",
       className: "application-form-input",
@@ -56,7 +55,7 @@ const ApplicationForm = () => {
     {
       label: "Additional Information",
       type: "textarea",
-      value: "",
+      initialValue: "",
       size: "large",
       className: "application-form-input",
       labelClass: "application-form-label",
@@ -67,11 +66,12 @@ const ApplicationForm = () => {
       options: ["LinkedIn", "Our website", "Our employee", "Others"],
       className: "application-form-input",
       labelClass: "application-form-label",
+      size: "large",
     },
     {
       label: "LinkedIn",
       type: "url",
-      value: "",
+      initialValue: "",
       size: "large",
       className: "application-form-input",
       labelClass: "application-form-label",
