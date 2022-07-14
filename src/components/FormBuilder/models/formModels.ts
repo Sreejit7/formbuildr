@@ -11,6 +11,7 @@ export interface FormInputConfig {
   placeholder?: string;
   size?: FormInputSize;
   options?: (string | number)[];
+  groupClass?: string;
 }
 
 export interface FormState {

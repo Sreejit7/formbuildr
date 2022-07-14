@@ -453,26 +453,37 @@ const FormBuilder = ({
         className={`form padding-md ${formClass ? formClass : ""} `}
         onSubmit={handleSubmit}
       >
-        {config.map(({ label, labelClass, type, required, ...inputProps }) => (
-          <section
-            className={`form-group form-group-${type}`}
-            key={`${formId}-${label}`}
-          >
-            <label
-              htmlFor={`${formId}-${label}`}
-              className={`form-label ${labelClass ? labelClass : ""} `}
+        {config.map(
+          ({
+            label,
+            labelClass,
+            groupClass,
+            type,
+            required,
+            ...inputProps
+          }) => (
+            <section
+              className={`form-group form-group-${type} ${
+                groupClass ? groupClass : ""
+              }`}
+              key={`${formId}-${label}`}
             >
-              {label}
-              {required && <span className="form-required">*</span>}
-            </label>
-            {renderInput(type, { label, required, ...inputProps })}
-            {formState[label]?.error && (
-              <small className="form-group-error">
-                Please {type === "file" ? "upload" : "fill"} {label}
-              </small>
-            )}
-          </section>
-        ))}
+              <label
+                htmlFor={`${formId}-${label}`}
+                className={`form-label ${labelClass ? labelClass : ""} `}
+              >
+                {label}
+                {required && <span className="form-required">*</span>}
+              </label>
+              {renderInput(type, { label, required, ...inputProps })}
+              {formState[label]?.error && (
+                <small className="form-group-error">
+                  Please {type === "file" ? "upload" : "fill"} {label}
+                </small>
+              )}
+            </section>
+          )
+        )}
         {formError && (
           <small className="form-group-error">
             Please fill all required fields!
