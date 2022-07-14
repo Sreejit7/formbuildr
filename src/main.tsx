@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import ApplicationForm from "./examples/Application";
+import ContactForm from "./examples/Contact";
 import Examples from "./examples/Examples";
 import SignUpForm from "./examples/SignUp";
 import "./index.css";
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/examples" element={<Examples />} />
         <Route path="/examples/signup" element={<SignUpForm />} />
         <Route path="/examples/application" element={<ApplicationForm />} />
+        <Route path="/examples/contact" element={<ContactForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

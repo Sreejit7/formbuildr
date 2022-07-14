@@ -49,6 +49,8 @@ button {
 .landing-examples-list {
   gap: 4rem;
   margin-top: 4rem;
+  flex-wrap: wrap;
+  padding: 1rem;
 }
 
 .landing-example {

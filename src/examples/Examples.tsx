@@ -23,6 +23,12 @@ const Examples = () => {
         >
           Application Form
         </li>
+        <li
+          className="landing-example center"
+          onClick={() => navigate("/examples/contact")}
+        >
+          Contact Form
+        </li>
       </ul>
     </main>
   );
