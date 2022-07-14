@@ -12,7 +12,7 @@ A form builder component for creating easy forms in React with just a config. Th
 - Ability to add custom header and footer elements _(including the Submit button, don't forget it!)_ for the form.
 - Ability to handle form submission, by passing an `onSubmit` callback prop. The callback receives the form state _(an object of form labels as keys and the input value as values)_ as an argument.
 - High customizability:
-  - Custom **form, form container, inputs & labels**.
+  - Custom **form, form container, inputs, labels & form groups**(a group contains the label & input for a form element).
   - Custom input sizes [small | medium (default) | large]
   - Customize by passing `className` or/and `styles` as props
   - **Customize all forms on your app globally** using global classnames, or
@@ -149,6 +149,7 @@ _Required properties are marked with an asterisk(*)_
 |  className   |                   `string`                    | A string that includes class(es) to be attached with the input.                                                                                                                                                        |
 |    styles    |                   `Object`                    | A style object that includes styles for the input.                                                                                                                                                                     |
 |  labelClass  |                   `string`                    | A string that includes class(es) to be attached with the label.                                                                                                                                                        |
+|  groupClass  |                   `string`                    | A string that includes class(es) to be attached with the form group (label and input box).                                                                                                                                                        |
 
 ## Global classNames
 
