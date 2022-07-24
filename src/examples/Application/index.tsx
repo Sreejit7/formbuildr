@@ -4,6 +4,7 @@ import {
   FormSubmitState,
 } from "../../components/FormBuilder/models/formModels";
 import SubmitButton from "../../components/FormBuilder/SubmitButton";
+import "./application.css";
 
 const ApplicationForm = () => {
   const applicationFormConfig: FormInputConfig[] = [
@@ -15,6 +16,9 @@ const ApplicationForm = () => {
       size: "large",
       className: "application-form-input",
       labelClass: "application-form-label",
+      groupHeader: (
+        <span className="application-form-group-header">Basic Details</span>
+      ),
     },
     {
       label: "Email",
@@ -42,6 +46,11 @@ const ApplicationForm = () => {
       size: "large",
       className: "application-form-input",
       labelClass: "application-form-label",
+      groupHeader: (
+        <span className="application-form-group-header">
+          Professional Details
+        </span>
+      ),
     },
     {
       label: "Current Employer",
@@ -84,6 +93,9 @@ const ApplicationForm = () => {
       size: "large",
       className: "application-form-input",
       labelClass: "application-form-label",
+      groupHeader: (
+        <span className="application-form-group-header">Attach Files</span>
+      ),
     },
   ];
 
@@ -93,31 +105,20 @@ const ApplicationForm = () => {
   };
 
   return (
-    <main className="center">
-      <FormBuilder
-        config={applicationFormConfig}
-        onSubmit={handleAppplicationSubmit}
-        formHeader={<FormHeader />}
-        formClass="application-form"
-      >
-        <SubmitButton text="Apply" submitClass="application-form-submit" />
-      </FormBuilder>
-    </main>
-  );
-};
-
-const FormHeader = () => {
-  return (
-    <header
-      style={{
-        backgroundColor: "#1f014a",
-        color: "#4ed8d5",
-        width: "100%",
-      }}
-      className="center"
-    >
-      <h2>Frontend Engineer - Forms</h2>
-    </header>
+    <>
+      <header className="application-header">
+        <h2>Frontend Engineer - Forms</h2>
+      </header>
+      <main className="center application-page">
+        <FormBuilder
+          config={applicationFormConfig}
+          onSubmit={handleAppplicationSubmit}
+          formClass="application-form"
+        >
+          <SubmitButton text="Apply" submitClass="application-form-submit" />
+        </FormBuilder>
+      </main>
+    </>
   );
 };
 

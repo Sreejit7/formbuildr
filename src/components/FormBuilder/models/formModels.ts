@@ -12,6 +12,8 @@ export interface FormInputConfig {
   size?: FormInputSize;
   options?: (string | number)[];
   groupClass?: string;
+  groupHeader?: JSX.Element;
+  groupFooter?: JSX.Element;
 }
 
 export interface FormState {

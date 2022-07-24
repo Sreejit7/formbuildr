@@ -460,6 +460,8 @@ const FormBuilder = ({
             groupClass,
             type,
             required,
+            groupHeader,
+            groupFooter,
             ...inputProps
           }) => (
             <section
@@ -468,6 +470,7 @@ const FormBuilder = ({
               }`}
               key={`${formId}-${label}`}
             >
+              {groupHeader}
               <label
                 htmlFor={`${formId}-${label}`}
                 className={`form-label ${labelClass ? labelClass : ""} `}
@@ -481,6 +484,7 @@ const FormBuilder = ({
                   Please {type === "file" ? "upload" : "fill"} {label}
                 </small>
               )}
+              {groupFooter}
             </section>
           )
         )}
