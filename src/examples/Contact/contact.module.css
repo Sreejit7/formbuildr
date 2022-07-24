@@ -60,3 +60,9 @@
   flex-direction: row-reverse;
   gap: 0.25rem;
 }
+
+@media only screen and (max-width: 425px) {
+  .contact-form-container {
+    padding: 1.75rem;
+  }
+}

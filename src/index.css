@@ -52,41 +52,14 @@ a {
   justify-content: space-between;
 }
 
+.justify-space-evenly {
+  justify-content: space-evenly;
+}
+
 .text-underline {
   text-decoration: underline;
 }
 
-/* classnames for application form example */
-
-.application-form {
-  border: 2px solid #624d80;
-  box-shadow: 0px 0px 32px 0px #7d859f;
-}
-
-.application-form-submit {
-  background-color: #1f014a;
-  color: #41cacb;
-  border-radius: 4px;
-  border: none;
-  padding: 8px 10px;
-  transition: 0.5s all ease;
-  font-weight: 600;
-}
-
-.application-form-submit:hover {
-  box-shadow: 0px 0px 16px 0px #624d80;
-}
-
-.application-form-input {
-  border: 2px solid #dfe4f0;
-  transition: 0.5s all ease;
-}
-
-.application-form-label {
-  color: #7d859f;
-  font-weight: 500;
-}
-
-.application-form-input:hover {
-  border-color: #c8cdd8;
+.w-full {
+  width: 100%;
 }
