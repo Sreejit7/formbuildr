@@ -1,33 +1,22 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 const Examples = () => {
-  const navigate = useNavigate();
-
   return (
-    <main className="landing">
-      <h1 className="landing-text">
+    <main className="page landing landing-examples">
+      <h1 className="landing-title">
         Here are some <span className="text-react">examples</span> for you.
       </h1>
       <ul className="landing-examples-list center">
-        <li
-          className="landing-example center"
-          onClick={() => navigate("/examples/signup")}
-        >
+        <Link to="/examples/signup" className="landing-example center">
           Sign Up Form
-        </li>
-        <li
-          className="landing-example center"
-          onClick={() => navigate("/examples/application")}
-        >
+        </Link>
+        <Link to="/examples/application" className="landing-example center">
           Application Form
-        </li>
-        <li
-          className="landing-example center"
-          onClick={() => navigate("/examples/contact")}
-        >
+        </Link>
+        <Link to="/examples/contact" className="landing-example center">
           Contact Form
-        </li>
+        </Link>
       </ul>
     </main>
   );

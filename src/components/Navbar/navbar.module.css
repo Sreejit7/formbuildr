@@ -1,0 +1,26 @@
+.navbar {
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 7 00;
+}
+
+.logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+.link {
+  transition: 0.7s all ease;
+}
+.link:hover {
+  background-color: #eeeeee;
+  border-radius: 4px;
+}
