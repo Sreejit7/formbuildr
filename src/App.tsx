@@ -35,7 +35,11 @@ function App() {
         </section>
       </section>
       <section className="landing-hero">
-        <img src={Hero} className="landing-image" />
+        <img
+          src={Hero}
+          className="landing-image"
+          alt="FormBuilder provides a way to create forms in React"
+        />
         <small>
           <a href="https://storyset.com/">Illustrations by Storyset</a>
         </small>
