@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import ApplicationForm from "./examples/Application";
 import ContactForm from "./examples/Contact";
 import Examples from "./examples/Examples";
@@ -12,6 +14,7 @@ import NotFound from "./pages/NotFound";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/examples" element={<Examples />} />
@@ -20,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/examples/contact" element={<ContactForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

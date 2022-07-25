@@ -23,11 +23,11 @@ li {
 a {
   color: inherit;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .page {
-  min-height: 90vh;
-  padding: 1rem 1.25rem;
+  min-height: 80vh;
 }
 
 .center {
@@ -62,4 +62,8 @@ a {
 
 .w-full {
   width: 100%;
+}
+
+.text-react {
+  color: #61d9fa;
 }
