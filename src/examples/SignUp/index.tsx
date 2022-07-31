@@ -1,9 +1,9 @@
-import FormBuilder from "../../components/FormBuilder";
-import SubmitButton from "../../components/FormBuilder/SubmitButton";
 import {
+  FormBuilder,
   FormInputConfig,
+  SubmitButton,
   FormSubmitState,
-} from "../../components/FormBuilder/models/formModels";
+} from "react-config-form";
 
 const SignUpForm = () => {
   const signupFormConfig: FormInputConfig[] = [

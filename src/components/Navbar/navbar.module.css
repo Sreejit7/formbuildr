@@ -24,3 +24,9 @@
   background-color: #eeeeee;
   border-radius: 4px;
 }
+
+.nav-logo {
+  height: 20px;
+  width: 60px;
+  object-fit: contain;
+}
