@@ -4,7 +4,7 @@
 
 **react-config-form** is a lightweight npm package for creating easy forms in React with just a config. The component removes all necessity to write long boilterplate for handling state, change & errors for any React form. Just pass in a **config**, and attach a **form submit handler**, and you're done! It's fully **type-safe** too if you're coming from a [TypeScript](https://www.typescriptlang.org/) home.
 
-[Visit the site for more info!](https://re-form.vercel.app)
+[Visit the site for more info!](https://formbuildr.vercel.app)
 
 ## Docs
 
