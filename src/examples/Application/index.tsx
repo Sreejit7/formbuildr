@@ -1,9 +1,9 @@
-import FormBuilder from "../../components/FormBuilder";
 import {
+  FormBuilder,
   FormInputConfig,
   FormSubmitState,
-} from "../../components/FormBuilder/models/formModels";
-import SubmitButton from "../../components/FormBuilder/SubmitButton";
+  SubmitButton,
+} from "react-config-form";
 import "./application.css";
 
 const ApplicationForm = () => {

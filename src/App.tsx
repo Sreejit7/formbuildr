@@ -15,7 +15,8 @@ function App() {
         <p className="landing-desc">
           Create fully accessible and customizable forms in React with a config
           object. Leave all worries of state, input change & error management
-          behind with FormBuilder.
+          behind with a FormBuilder component. Comes with the full power of
+          TypeScript.
         </p>
         <section className="landing-buttons center">
           <button
@@ -26,7 +27,7 @@ function App() {
           </button>
           <a
             className="landing-btn secondary-btn center"
-            href="https://github.com/Sreejit7/react-form-builder"
+            href="https://github.com/Sreejit7/react-config-form#readme"
             target="_blank"
             rel="noreferrer"
           >

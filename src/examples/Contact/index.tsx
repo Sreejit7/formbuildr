@@ -1,5 +1,4 @@
-import FormBuilder from "../../components/FormBuilder";
-import { FormSubmitState } from "../../components/FormBuilder/models/formModels";
+import { FormBuilder, FormSubmitState } from "react-config-form";
 import styles from "./contact.module.css";
 
 const ContactForm = () => {
