@@ -51,9 +51,7 @@ const SignUpForm = () => {
         config={signupFormConfig}
         formStyles={{
           backgroundColor: "#4cd8d3",
-          boxShadow: "none",
-          borderColor: "#1e014a",
-          borderWidth: "2px",
+          border: "1px solid #1e014a",
         }}
         formHeader={
           <header
