@@ -37,7 +37,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className={`${styles["contact-page"]} center`}>
+    <main className={`${styles["contact-page"]} center`}>
       <FormBuilder
         config={contactFormConfig}
         onSubmit={onContactFormSubmit}
@@ -47,7 +47,7 @@ const ContactForm = () => {
       >
         <button className={styles["contact-form-submit"]}>Contact me</button>
       </FormBuilder>
-    </section>
+    </main>
   );
 };
 

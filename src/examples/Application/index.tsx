@@ -4,6 +4,9 @@ import {
   FormSubmitState,
   SubmitButton,
 } from "react-config-form";
+// importing default form styles
+import "react-config-form/dist/react-config-form.cjs.development.css";
+// overriding some default styles with custom css
 import "./application.css";
 
 const ApplicationForm = () => {
@@ -106,10 +109,10 @@ const ApplicationForm = () => {
 
   return (
     <>
-      <header className="application-header">
+      <header className="application-header w-full">
         <h2>Frontend Engineer - Forms</h2>
       </header>
-      <main className="center application-page">
+      <main className="center page">
         <FormBuilder
           config={applicationFormConfig}
           onSubmit={handleAppplicationSubmit}
