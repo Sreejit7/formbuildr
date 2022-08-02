@@ -4,7 +4,9 @@ import {
   FormSubmitState,
   SubmitButton,
 } from "react-config-form";
+// importing default form styles
 import "react-config-form/dist/react-config-form.cjs.development.css";
+// overriding some default styles with custom css
 import "./application.css";
 
 const ApplicationForm = () => {
