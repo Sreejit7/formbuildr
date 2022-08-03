@@ -1,0 +1,11 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sandbox {
+  padding: 3rem 1.5rem;
+  gap: 2rem;
+  background-color: var(--react-theme);
+}
