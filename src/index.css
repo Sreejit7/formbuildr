@@ -1,3 +1,7 @@
+:root {
+  --react-theme: #61d9fa;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -60,10 +64,14 @@ a {
   text-decoration: underline;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .w-full {
   width: 100%;
 }
 
 .text-react {
-  color: #61d9fa;
+  color: var(--react-theme);
 }
